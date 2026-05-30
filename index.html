@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Uncommon Favour PVT</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #4f46ff;
+            --secondary: #3b82f6;
+            --dark: #0f172a;
+            --light: #f8fbff;
+            --text: #64748b;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #4f46ff, #3b82f6);
+            --shadow: 0 18px 50px rgba(79, 70, 255, 0.10);
+            --shadow-soft: 0 10px 35px rgba(15, 23, 42, 0.08);
+            --radius: 30px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            word-wrap: break-word;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: rgba(5, 8, 22, 0.92);
+            padding: 14px 0;
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-thriven {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .logo-cloud {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 600;
+            margin-left: 14px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: 0.3s ease;
+        }
+
+        .nav-link i {
+            font-size: 0.9rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: #8db6ff;
+            transition: 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #8db6ff !important;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-main {
+            background: var(--gradient);
+            border: none;
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            color: #fff;
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            padding: 180px 0 130px;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at top right, rgba(79, 70, 255, 0.22), transparent 35%),
+                radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.14), transparent 35%),
+                linear-gradient(to bottom, #050816, #0f172a);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 45vw;
+            height: 45vw;
+            max-width: 650px;
+            max-height: 650px;
+            border-radius: 50%;
+            background: rgba(79, 70, 255, 0.10);
+            top: -180px;
+            right: -120px;
+            z-index: 0;
+            filter: blur(10px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 30vw;
+            height: 30vw;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.10);
+            bottom: -120px;
+            left: -100px;
+            filter: blur(15px);
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.10);
+            color: #8db6ff;
+            padding: 9px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(2.8rem, 6vw, 5.3rem);
+            font-weight: 800;
+            line-height: 1.05;
+            max-width: 920px;
+            margin-bottom: 28px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #8db6ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            font-size: 1.08rem;
+            line-height: 2;
+            max-width: 780px;
+        }
+
+        /* SECTION SPACING */
+        .section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            color: var(--dark);
+        }
+
+        .section-heading p {
+            color: var(--text);
+            max-width: 780px;
+            margin: auto;
+            line-height: 1.95;
+            font-size: 1.02rem;
+        }
+
+        /* GLASS CARDS */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            padding: 42px;
+            box-shadow: var(--shadow-soft);
+            height: 100%;
+            transition: 0.35s ease;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(79, 70, 255, 0.12);
+        }
+
+        .icon-box {
+            width: 74px;
+            height: 74px;
+            border-radius: 24px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 26px;
+            box-shadow: 0 15px 30px rgba(79, 70, 255, 0.22);
+            flex-shrink: 0;
+        }
+
+        .glass-card h4 {
+            font-weight: 700;
+            margin-bottom: 18px;
+            font-size: 1.3rem;
+        }
+
+        .glass-card p {
+            color: var(--text);
+            line-height: 1.95;
+            margin-bottom: 0;
+        }
+
+        /* COMPANY */
+        .company-box {
+            background: #fff;
+            border-radius: 32px;
+            padding: 55px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #eef2ff;
+            height: 100%;
+        }
+
+        .info-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #eef2ff;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .info-item:first-child {
+            padding-top: 0;
+        }
+
+        .info-title {
+            color: var(--primary);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 7px;
+            letter-spacing: 1.2px;
+        }
+
+        .info-value {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        /* MISSION */
+        .mission-box {
+            background: linear-gradient(135deg, #ffffff, #f5f7ff);
+            padding: 55px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid #eef2ff;
+            height: 100%;
+        }
+
+        .mission-box p {
+            color: var(--text);
+            line-height: 2;
+            margin-bottom: 24px;
+        }
+
+        .mission-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* TEAM */
+        .team-card {
+            background: #fff;
+            border-radius: 32px;
+            padding: 42px 34px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: 0.35s ease;
+            height: 100%;
+            border: 1px solid #eef2ff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(79, 70, 255, 0.12);
+        }
+
+        .team-image {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #4f46ff, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .team-card h5 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .team-card p {
+            color: var(--text);
+            line-height: 1.9;
+            margin-bottom: 0;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #0f172a, #111c36);
+            border-radius: 38px;
+            padding: 80px 45px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            background: rgba(79, 70, 255, 0.15);
+            border-radius: 50%;
+            top: -120px;
+            right: -120px;
+        }
+
+        .cta p {
+            max-width: 780px;
+            margin: auto;
+            line-height: 2;
+            color: #d1d5db;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050816;
+            padding: 80px 0 35px;
+            color: #cbd5e1;
+            margin-top: 90px;
+        }
+
+        footer h5 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        footer p {
+            line-height: 1.95;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.08);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        footer ul li a {
+            transition: 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #8db6ff !important;
+            padding-left: 4px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+            .hero {
+                padding: 150px 0 95px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+                line-height: 1.15;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .company-box,
+            .mission-box,
+            .glass-card,
+            .team-card {
+                padding: 30px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 40px;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+
+            .navbar-brand {
+                gap: 8px;
+            }
+
+            .nav-logo {
+                height: 50px;
+                width: 50px;
+            }
+
+            .logo-thriven,
+            .logo-cloud {
+                font-size: 1rem;
+            }
+
+            .cta {
+                padding: 55px 26px;
+            }
+
+            .btn-main {
+                width: 100%;
+            }
+
+            .team-image {
+                width: 130px;
+                height: 130px;
+            }
+
+            .row.g-4 {
+                --bs-gutter-y: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://thriven.cloud/assets/uncommonFavour.jpeg" alt="Uncommon Favour Logo" class="nav-logo">
+                <div>
+                    <div class="logo-thriven">Uncommon</div>
+                    <div class="logo-cloud">Favour</div>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0 text-white shadow-none" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="fa-solid fa-house me-2"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-circle-info me-2"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-envelope me-2"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="#" class="btn btn-main">
+                            <i class="fa-solid fa-heart me-2"></i>Support Mission
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container position-relative">
+            <span class="section-tag">Technology For Social Impact</span>
+            <h1>
+                Empowering Communities Through
+                <span class="gradient-text">Innovation, Inclusion & Sustainable Technology</span>
+            </h1>
+            <p>
+                Uncommon Favour PVT is a Zimbabwean innovation driven organization committed to developing inclusive digital solutions, sustainable community initiatives and transformative technologies that create meaningful opportunities for underserved communities and future generations.
+            </p>
+        </div>
+    </section>
+
+    <!-- CORE FOCUS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Our Core Focus</h2>
+                <p>
+                    We integrate technology, innovation and community centered development to build sustainable solutions that strengthen access, opportunity, digital inclusion and long term empowerment across communities.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="glass-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4>Digital Transformation</h4>
+                        <p>
+                            We develop modern technology solutions, digital platforms and innovative systems that support businesses, institutions and communities through efficient, scalable and future ready technologies.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h4>Community Empowerment</h4>
+                        <p>
+                            We support community development through digital literacy, mentorship, entrepreneurship initiatives, skills development and technology accessibility programs that create sustainable opportunities.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-earth-africa"></i>
+                        </div>
+                        <h4>Sustainable Innovation</h4>
+                        <p>
+                            We promote responsible innovation, ethical leadership and impactful partnerships that contribute toward resilient communities, inclusive growth and sustainable development outcomes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY IMPACT -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Community Impact & Strategic Partnerships</h2>
+                <p>
+                    Uncommon Favour PVT welcomes partnerships, sponsorships, funding collaborations and institutional alliances with organizations, companies and individuals committed to advancing inclusive development and sustainable community initiatives.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="glass-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </div>
+                        <h4>Community Support Initiatives</h4>
+                        <p>
+                            We collaborate with local and international stakeholders to strengthen community wellbeing through educational support, digital inclusion initiatives, social assistance programs, entrepreneurship development and access to essential resources.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h4>Inclusive Technology & Wellness Support</h4>
+                        <p>
+                            Our organization promotes inclusive support initiatives for individuals living with disabilities and long term health related challenges through community driven assistance programs and the responsible use of technology to improve accessibility, communication and resource coordination.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPANY PROFILE -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5">
+                    <div class="company-box">
+                        <h2 class="fw-bold mb-4">Company Profile</h2>
+                        <div class="info-item">
+                            <div class="info-title">Company Name</div>
+                            <div class="info-value">Uncommon Favour Private Limited</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-title">Entity Number</div>
+                            <div class="info-value">106216A0242026</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-title">Date Incorporated</div>
+                            <div class="info-value">29 April 2026</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-title">Country</div>
+                            <div class="info-value">Zimbabwe</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-title">Executive Director</div>
+                            <div class="info-value">Dr Emmanuel Mudzengerere</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-title">Vice Director</div>
+                            <div class="info-value">Perseverance Nyadembera</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="mission-box">
+                        <span class="section-tag text-dark bg-light">Mission & Vision</span>
+                        <h2 class="fw-bold mb-4">Building Sustainable Impact Through Innovation & Inclusion</h2>
+                        <p>
+                            Uncommon Favour PVT was established with a mission to leverage technology, innovation and strategic collaboration to create sustainable opportunities that empower communities and strengthen social and economic development.
+                        </p>
+                        <p>
+                            We are committed to advancing digital transformation, promoting inclusive access to technology, supporting skills development and enabling communities to participate meaningfully in the modern digital economy through practical and impactful solutions.
+                        </p>
+                        <p>
+                            Our long term vision is to contribute toward a future where innovation, ethical leadership and community centered development create resilient societies equipped for sustainable growth, equal opportunity and inclusive progress.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Leadership Team</h2>
+                <p>
+                    Our leadership team combines strategic leadership, innovation and technical expertise to advance impactful initiatives focused on community empowerment, sustainable development and digital transformation.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://thriven.cloud/assets/IMG-20260521-WA0037.jpg" alt="Dr Emmanuel Mudzengerere" class="img-fluid">
+                        </div>
+                        <h5>Dr Emmanuel Mudzengerere</h5>
+                        <div class="team-role">Executive Director</div>
+                        <p>
+                            Provides strategic leadership and organizational oversight with a strong focus on innovation, sustainable development, institutional growth and long term community impact initiatives.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://thriven.cloud/assets/IMG-20260521-WA0042.jpg" alt="Perseverance Nyadembera" class="img-fluid">
+                        </div>
+                        <h5>Perseverance Nyadembera</h5>
+                        <div class="team-role">Vice Director</div>
+                        <p>
+                            Supports organizational operations, partnership coordination and community engagement initiatives while contributing toward the strategic development objectives of the organization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="cta">
+                <span class="section-tag">Partner With Us</span>
+                <h2 class="fw-bold mb-4">Advancing Inclusive Innovation & Sustainable Development</h2>
+                <p class="mb-5">
+                    We welcome strategic partnerships, sponsorships, institutional collaborations and development support from organizations, companies, donors and stakeholders who share our commitment to innovation, empowerment, education, sustainability and long term community impact.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="#" class="btn btn-main">Contact Us</a>
+                    <a href="#" class="btn btn-outline-light rounded-pill px-4 py-3 fw-semibold">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h5>Uncommon Favour PVT</h5>
+                    <p>
+                        Driving sustainable impact through innovation, technology, inclusive development and community empowerment initiatives across Zimbabwe and beyond.
+                    </p>
+                    <div class="social-links mt-4">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a href="#" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-3"><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li class="mb-3"><a href="#" class="text-light text-decoration-none">Services</a></li>
+                        <li class="mb-3"><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                        <li class="mb-3"><a href="#" class="text-light text-decoration-none">Terms of service</a></li>
+                        <li class="mb-3"><a href="#" class="text-light text-decoration-none">Privacy policy</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact Information</h5>
+                    <p class="mb-3">
+                        <i class="fa-solid fa-location-dot me-2"></i>Harare, Zimbabwe
+                    </p>
+                    <p class="mb-3">
+                        <i class="fa-solid fa-envelope me-2"></i>info@uncommonfavour.org
+                    </p>
+                    <p class="mb-3">
+                       <i class="fa-solid fa-phone-volume me-2"></i>Dr E. Mudzengerere:<br>+263 78 948 7912 / +263 77 571 7510
+                    </p>
+                    <p class="mb-3">
+                        <i class="fa-solid fa-phone-volume me-2"></i>Perseverance Nyadembera:<br>+263 78 948 7926
+                    </p>
+                </div>
+            </div>
+            <hr class="border-secondary my-5">
+            <div class="text-center">
+                <small>&copy; 2026 Uncommon Favour PVT. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+</body>
+</html>
